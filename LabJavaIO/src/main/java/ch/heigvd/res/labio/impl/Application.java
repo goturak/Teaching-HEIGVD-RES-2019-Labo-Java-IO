@@ -126,10 +126,10 @@ public class Application implements IApplication {
   void storeQuote(Quote quote, String filename) throws IOException {
     String path=WORKSPACE_DIRECTORY;
     for(String s : quote.getTags()){
-     path+=("/"+s);
+     path+=(File.separator+s);
     }
     new File(path).mkdirs();
-    path+=("/"+filename);
+    path+=(File.separator+filename);
 
     File newQuote = new File(path);
     OutputStreamWriter writer = new OutputStreamWriter( new FileOutputStream(newQuote), "UTF-8" );
